@@ -19,6 +19,7 @@ for (let i = 0; i < numSquares; i++) {
     }
 }
 
+// stuff should happen after button is clicked too
 const resButton = document.querySelector("button");
 resButton.addEventListener('click', function (e) {
     let userInput = parseInt(prompt("Enter number of squares on one side of grid:", 64));
