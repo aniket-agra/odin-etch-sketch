@@ -2,8 +2,6 @@ let numSquares = 64;
 
 // canvas properties must stay fixed regardless of button actions
 const canvas = document.querySelector('.grid');
-// grid must be a square canvas to add div "squares"
-canvas.style.cssText = "display: flex; flex-direction: column; width: 600px; height: 600px;";
 
 //create the default canvas first
 for (let i = 0; i < numSquares; i++) {
