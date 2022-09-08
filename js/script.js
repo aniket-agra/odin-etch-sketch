@@ -15,9 +15,9 @@ for (let i = 0; i < numSquares; i++) {
         let canvasCol = document.createElement('div');
         canvasCol.style.cssText = "flex: 1 1 auto;";
         canvasRow.append(canvasCol);
-        // gridDivCol.addEventListener('mouseover', function (e) {
-        //     gridDivCol.style.backgroundColor = "black";
-        // });
+        canvasCol.addEventListener('mouseover', function (e) {
+            canvasCol.style.backgroundColor = "black";
+        });
     }
 }
 
@@ -42,9 +42,9 @@ resButton.addEventListener('click', function (e) {
             let canvasCol = document.createElement('div');
             canvasCol.style.cssText = "flex: 1 1 auto;";
             canvasRow.append(canvasCol);
-            // gridDivCol.addEventListener('mouseover', function (e) {
-            //     gridDivCol.style.backgroundColor = "black";
-            // });
+            canvasCol.addEventListener('mouseover', function (e) {
+                canvasCol.style.backgroundColor = "black";
+            });
         }
     }
 });
