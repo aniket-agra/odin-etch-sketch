@@ -11,18 +11,18 @@ resButton.addEventListener('click', function (e) {
     // console.log(userInput !== null);
     if (!isNaN(userInput))    numSquares = parseInt(userInput);
     console.log(numSquares);
+    for (let i = 0; i < numSquares; i++) {
+        let canvasRow = document.createElement('div');
+        canvasRow.style.cssText = "flex: 1 1 auto; display: flex;";
+        canvas.appendChild(canvasRow);
+        for (let j = 0; j < numSquares; j++) {
+            let canvasCol = document.createElement('div');
+            canvasCol.style.cssText = "flex: 1 1 auto;";
+            canvasRow.append(canvasCol);
+            // gridDivCol.addEventListener('mouseover', function (e) {
+            //     gridDivCol.style.backgroundColor = "black";
+            // });
+        }
+    }
 });
 
-for (let i = 0; i < numSquares; i++) {
-    let canvasRow = document.createElement('div');
-    canvasRow.style.cssText = "flex: 1 1 auto; display: flex;";
-    canvas.appendChild(canvasRow);
-    for (let j = 0; j < numSquares; j++) {
-        let canvasCol = document.createElement('div');
-        canvasCol.style.cssText = "flex: 1 1 auto;";
-        canvasRow.append(canvasCol);
-        // gridDivCol.addEventListener('mouseover', function (e) {
-        //     gridDivCol.style.backgroundColor = "black";
-        // });
-    }
-}
