@@ -25,6 +25,10 @@ const resButton = document.querySelector("button");
 resButton.addEventListener('click', function (e) {
     let userInput = parseInt(prompt("Enter number of squares on one side of grid:", 64));
     // console.log(userInput !== null);
+    if (userInput > 100) {
+        alert("Please enter a number lesser than 100!");
+        return;
+    }
     if (!isNaN(userInput))    numSquares = parseInt(userInput);
     let rows = document.querySelectorAll(".row");
     rows.forEach(row => canvas.removeChild(row));
