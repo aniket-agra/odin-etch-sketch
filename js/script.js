@@ -1,5 +1,5 @@
 let numSquares = 64;
-
+let clicked = false;
 // canvas properties must stay fixed regardless of button actions
 const canvas = document.querySelector('.grid');
 
@@ -13,8 +13,16 @@ for (let i = 0; i < numSquares; i++) {
         let canvasCol = document.createElement('div');
         canvasCol.style.cssText = "flex: 1 1 auto;";
         canvasRow.append(canvasCol);
-        canvasCol.addEventListener('mouseover', function (e) {
-            canvasCol.style.backgroundColor = "black";
+        canvasCol.addEventListener('mousedown', function () {
+            clicked = !clicked;
+        });
+        canvasCol.addEventListener('mouseover', function () {
+            if (clicked) {
+                canvasCol.style.backgroundColor = "black";
+            }
+        });
+        canvasCol.addEventListener('mouseup', function () {
+            clicked = !clicked;
         });
     }
 }
@@ -41,10 +49,25 @@ resButton.addEventListener('click', function (e) {
             let canvasCol = document.createElement('div');
             canvasCol.style.cssText = "flex: 1 1 auto;";
             canvasRow.append(canvasCol);
-            canvasCol.addEventListener('mouseover', function (e) {
-                canvasCol.style.backgroundColor = "black";
+            canvasCol.addEventListener('mousedown', function () {
+                clicked = !clicked;
+            });
+            canvasCol.addEventListener('mouseover', function () {
+                if (clicked) {
+                    canvasCol.style.backgroundColor = "black";
+                }
+            });
+            canvasCol.addEventListener('mouseup', function () {
+                clicked = !clicked;
             });
         }
     }
 });
 
+resButton.addEventListener('mouseover', function (e) {
+    resButton.style.scale = "1.1";
+});
+
+resButton.addEventListener('mouseleave', function (e) {
+    resButton.style.scale = "1";
+});
